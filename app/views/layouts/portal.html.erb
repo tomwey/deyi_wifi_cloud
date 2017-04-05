@@ -25,7 +25,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="/" class="site_title"><i class="fa fa-camera-retro"></i> <span>云影</span></a>
+            <a href="/" class="site_title"><i class="fa fa-camera-retro"></i> <span>得益无线平台</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -33,11 +33,11 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <%= member_avatar_tag(current_member, :large, 'img-circle profile_img') %>
+              <%= member_avatar_tag(current_user, :large, 'img-circle profile_img') %>
             </div>
             <div class="profile_info">
               <span>您好,</span>
-              <h2><%= current_member.mobile %></h2>
+              <h2><%= current_user.mobile %></h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -51,52 +51,16 @@
               <ul class="nav side-menu">
                 <li><a href="<%= portal_root_path %>"><i class="fa fa-home"></i> 概述 <span class="fa fa-chevron-right"></span></a>
                 </li>
-                <% if policy(Product).read? %>
-                <li><a><i class="fa fa-edit"></i> 产品管理 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <% if policy(Product).create? %>
-                    <li><a href="<%= new_portal_product_path %>">新建产品</a></li>
-                    <% end %>
-                    <li><a href="<%= portal_products_path %>">产品列表</a></li>
-                  </ul>
-                </li>
-                <% end %>
                 <li><a><i class="fa fa-table"></i> 订单管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="tables.html">Tables</a></li>
                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-desktop"></i> 选片管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> 订单管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="general_elements.html">General Elements</a></li>
-                    <li><a href="media_gallery.html">Media Gallery</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="icons.html">Icons</a></li>
-                    <li><a href="glyphicons.html">Glyphicons</a></li>
-                    <li><a href="widgets.html">Widgets</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
-                    <li><a href="inbox.html">Inbox</a></li>
-                    <li><a href="calendar.html">Calendar</a></li>
-                  </ul>
-                </li>
-                <% if policy(Customer).read? %>
-                <li><a><i class="fa fa-desktop"></i> 客户管理 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <% if policy(Customer).create? %>
-                    <li><a href="<%= new_portal_customer_path %>">添加客户</a></li>
-                    <% end %>
-                    <li><a href="<%= portal_customers_path %>">客户列表</a></li>
-                  </ul>
-                </li>
-                <% end %>
-                <li><a><i class="fa fa-bar-chart-o"></i> 营销系统 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="chartjs.html">Chart JS</a></li>
-                    <li><a href="chartjs2.html">Chart JS2</a></li>
-                    <li><a href="morisjs.html">Moris JS</a></li>
-                    <li><a href="echarts.html">ECharts</a></li>
-                    <li><a href="other_charts.html">Other Charts</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-clone"></i> 企业信息 <span class="fa fa-chevron-down"></span></a>
@@ -110,22 +74,6 @@
             <div class="menu_section">
               <h3>用户中心</h3>
               <ul class="nav side-menu">
-                <% if policy(Member).read? %>
-                <li><a><i class="fa fa-bug"></i> 账户管理 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="<%= new_portal_member_path %>">新建账户</a></li>
-                    <li><a href="<%= portal_members_path %>">账户列表</a></li>
-                  </ul>
-                </li>
-                <% end %>
-                <% if policy(Role).read? %>
-                <li><a><i class="fa fa-windows"></i> 角色管理 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="<%= new_portal_role_path %>">新建角色</a></li>
-                    <li><a href="<%= portal_roles_path %>">角色列表</a></li>
-                  </ul>
-                </li>
-                <% end %>
                 <li><a><i class="fa fa-sitemap"></i> 消息 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                       <li><a href="#level1_1">Level One</a>
@@ -179,8 +127,8 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <%= member_avatar_tag(current_member, :small) %>
-                  <%= current_member.mobile %>
+                  <%= member_avatar_tag(current_user, :small) %>
+                  <%= current_user.mobile %>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -277,7 +225,7 @@
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          版权所有 &copy; <%= Time.now.year %> <a href="http://yy.afterwind.cn" target="_blank">云影</a> 保留所有权利.蜀ICP备14031323号
+          版权所有 &copy; <%= Time.now.year %> <a href="http://cloud.deyiwifi.com" target="_blank">得益WIFI</a> 保留所有权利.蜀ICP备14031323号
         </div>
         <div class="clearfix"></div>
       </footer>
