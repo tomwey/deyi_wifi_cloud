@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <meta name="keywords" content="<%= @meta_keywords %>" />
+  <meta name="description" content="<%= @meta_description %>" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>" />
+  
+  <%= stylesheet_link_tag    'front', media: 'all' %>
+  <%= yield :styles %>
+  <%= csrf_meta_tags %>
+  
+  <%= render 'layouts/shim' %>
+  
+</head>
+<body>
+
+  <div class="account-header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="brand pull-left" href="http://yy.afterwind.cn">
+            <%= image_tag 'logo.png', class: 'logo', alt: '云影' %>
+          </a>
+          <span class="action"><%= @action %></span>
+        </div>
+        <ul class="nav navbar-nav link">
+          <li><a href="/">首页</a></li>
+          <li><a href="/">产品</a></li>
+          <li><a href="/">价格</a></li>
+          <li><a href="/">关于</a></li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right link">
+          <li><a href="<%= new_member_session_path %>">登录</a></li>
+          <li><a href="<%= new_member_registration_path %>">注册</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <div class="footer">
+    <div class="copyright">
+      <small>
+          版权所有 &copy; <%= Time.now.year %> 云影 保留所有权利.蜀ICP备14031323号
+        </small>
+    </div>
+  </div>
+
+<%= javascript_include_tag 'application' %>
+<%= yield :scripts %>
+</body>
+</html>

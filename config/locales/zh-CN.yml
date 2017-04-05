@@ -1,0 +1,179 @@
+"zh-CN":
+  common:
+    super_admin: '管理员'
+    admin: '管理员'
+    site_editor: '站点编辑'
+    marketer: '市场人员'
+    pending: '待处理'
+    paid: '待配送'
+    shipping: '配送中'
+    canceled: '已取消'
+    completed: '已完成'
+    processing: '处理中'
+    read: '查看'
+    create: '创建'
+    update: '修改'
+    destroy: '删除'
+  activerecord:
+    models:
+      user: "用户"
+      admin: "管理员"
+      cpanel: '后台系统' # 此处并不存在真正意义的model，只是为了后台系统的面包屑导航根地址国际化成中文
+      banner: "广告"
+      site_config: "站点配置"
+      feedback: "意见反馈"
+      page: '文档'
+      app_type: 'APP类型'
+      app_version: 'App版本'
+      channel: '频道'
+      message: '消息'
+      common_config: '公共配置'
+      product: '产品'
+      role: '角色'
+      member: '账号'
+      customer: '客户'
+    attributes:
+      user:
+        mobile: "手机"
+        nickname: "昵称"
+        avatar: "头像"
+        # signature: "个性签名"
+        password: "密码"
+        password_confirmation: "确认密码"
+        verified: "是否启用"
+        private_token: "Token"
+        created_at: "注册时间"
+      member:
+        mobile: "手机号"
+        password: '密码'
+        password_confirmation: '确认密码'
+        role_ids: '角色'
+      customer:
+        avatar: '头像'
+        nickname: '昵称'
+        realname: '姓名'
+        mobile: '手机'
+        address: '住址'
+        owner_id: '所有者'
+        o_id: '客户ID'
+        wx_id: '微信ID'
+      app_version:
+        os: '系统'
+        version: '版本号'
+        changelog: '版本更新描述'
+        file: '安装包文件'
+        must_upgrade: '该版本是否必须升级'
+        mode: '该版本所用环境'
+        opened: '是否打开'
+      node:
+        name: '节点名'
+        sort: '显示顺序'
+        opened: '是否可见'
+        nid: '节点ID'
+      page:
+        title: '标题'
+        body:  '内容'
+        slug:  '文档标识'
+      common_config:
+        key: '配置名'
+        value: '配置值'
+        description: '配置说明'
+      message:
+        title: '标题'
+        content: '内容'
+        to: '用户'
+        read_at: '已读时间'
+        created_at: '创建时间'
+      site_config:
+        key: "配置名称"
+        value: "配置值"
+        description: "配置说明"
+      admin:
+        email: "邮箱"
+        password: "密码"
+        current_password: "旧密码"
+        password_confirmation: "确认密码"
+        current_sign_in_at: "最新登录时间"
+        sign_in_count: "登录次数"
+        created_at: "创建时间"
+        role: "角色"
+      product:
+        pid: '产品ID'
+        name: '名称'
+        image: '图片'
+        intro: '简介'
+        body: '详情'
+        market_price: '原价'
+        discount_price: '折扣价'
+        stock: '库存'
+        view_count: '浏览数'
+        orders_count: '订单数'
+        photos_quantity: '照片数'
+        owner_id: '所有者'
+        sort: '显示顺序'
+      role:
+        name: '角色名'
+        owner_id: '所有者'
+      app_type:
+        name: '类型名称'
+        parent_id: '父级分类'
+        parent: '分类目录'
+        icon: '图标'
+        sort: '显示顺序'
+        opened: '是否使用'
+        
+    errors:
+      models:
+        user: "用户"
+        admin: "管理员"
+        category: "类别"
+        channel: '频道'
+      messages:
+        inclusion: "不包含于列表中"
+        exclusion: "是保留关键字"
+        invalid: "是无效的"
+        confirmation: "与确认值不匹配"
+        accepted: "必须是可被接受的"
+        empty: "不能留空"
+        blank: "不能为空字符"
+        too_long: "过长（最长为 %{count} 个字符）"
+        too_short: "过短（最短为 %{count} 个字符）"
+        wrong_length: "长度非法（必须为 %{count} 个字符）"
+        taken: "已经被使用"
+        not_a_number: "不是数字"
+        not_an_integer: "必须是整数"
+        greater_than: "必须大于 %{count}"
+        greater_than_or_equal_to: "必须大于或等于 %{count}"
+        equal_to: "必须等于 %{count}"
+        less_than: "必须小于 %{count}"
+        less_than_or_equal_to: "必须小于或等于 %{count}"
+        odd: "必须为单数"
+        even: "必须为双数"
+        record_invalid: "校验失败: %{errors}"
+        taken:
+          已占用
+        document_not_found:
+          没有发现类是 %{klass} ID 是 %{identifiers} 的文档
+        invalid_database:
+          数据库应该是Mongo::DB,而不是%{name}.
+        invalid_type:
+          在类%{klass}中定义了字段,实际值是%{value}的%{other}.
+        unsupported_version:
+          MongoDB %{version} 版本已过期，请升级到 %{mongo_version}.
+        validations:
+          校验失败 - %{errors}.
+        invalid_collection:
+          不允许直接访问嵌入式的集合%{klass} , 请从文档的根访问集合.
+        invalid_field:
+          字段的名字不允许为 %{name}. 你不应该定义跟Mongoid内部属性或者方法相同的名字，详细请看Use Document#instance_methods.
+        too_many_nested_attribute_records:
+          被关联的%{association} 嵌入式属性不能超过 %{limit}.
+        embedded_in_must_have_inverse_of:
+          embedded_in的关联属性必须包含inverse_of.
+        dependent_only_references_one_or_many:
+          dependent => destroy|delete 选项只有在references_one或者references_many时候有效.
+        association_cant_have_inverse_of:
+          在当前的关联中，不允许定义inverse_of去,其只有在embedded_in或者references_many是数组的情况下使用
+        unsaved_document:
+          You cannot call create or create! through a relational association
+          relation (%{document}) who's parent (%{base}) is not already saved.

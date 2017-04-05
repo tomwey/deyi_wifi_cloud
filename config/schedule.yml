@@ -1,0 +1,4 @@
+douyu_data_check:
+  cron: "*/5 * * * *"
+  class: "CheckLiveJob"
+  queue: scheduled_jobs

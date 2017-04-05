@@ -1,0 +1,22 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag  'member' %>
+<% end %>
+<div class="account-tips">请选择账号类型</div>
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-3">
+    <a class="account-box" href="<%= new_studio_path %>">
+      <h2>工作室</h2>
+      <p>只能使用当前注册的账号管理</p>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a class="account-box" href="<%= new_company_path %>">
+      <h2>影楼</h2>
+      <p>支持创建多个子账号，并分配权限进行管理</p>
+    </a>
+  </div>
+</div>
+
+<div class="account-notice">* 工作室账号可以升级为影楼账号</div>
+  

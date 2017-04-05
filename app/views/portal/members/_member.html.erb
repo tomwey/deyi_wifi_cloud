@@ -1,0 +1,10 @@
+<tr>
+  <td><%= member_avatar_tag(member, :normal) %></td>
+  <td><%= member.mobile %></td>
+  <td><%= member.roles.map(&:name).join(',') %></td>
+  <td><%= l member.created_at, format: :long %></td>
+  <td>
+    <%= link_to '编辑', edit_portal_member_path(member), class: 'btn btn-sm btn-default' %>
+    <%= link_to '删除', portal_member_path(member), method: :delete,  data: { confirm: '您确定吗？' },class: 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

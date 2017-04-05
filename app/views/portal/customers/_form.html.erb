@@ -1,0 +1,31 @@
+<div class="x_panel">
+  <div class="x_content">
+    <br />
+    
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    
+        <%= simple_form_for([:portal, @customer], html: { class: 'form-horizontal form-label-left', id: 'customer_form' },
+          wrapper: :horizontal_form,
+          wrapper_mappings: {
+            check_boxes: :horizontal_radio_and_checkboxes,
+            radio_buttons: :horizontal_radio_and_checkboxes,
+            file: :horizontal_file_input,
+            boolean: :horizontal_boolean
+          }) do |f| %>
+            <%= f.input :nickname %>
+            <%= f.input :avatar, hint: '图片格式为：jpg, jpeg, png' %>
+            <%= f.input :realname %>
+            <%= f.input :mobile %>
+            <%= f.input :address %>
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-3">
+                <%= link_to '取消', :back, class: "btn btn-primary" %>
+                <button type="submit" class="btn btn-success"><%= f.object.new_record? ? "新建客户" : "更新客户" %></button>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

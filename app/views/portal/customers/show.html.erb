@@ -1,0 +1,72 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3>客户详细资料</h3>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div class="row">
+          <div class="col-sm-3">
+            客户ID
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.o_id  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            头像
+          </div>
+          <div class="col-sm-9">
+            <%= member_avatar_tag(@customer, :large, 'img-circle')  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            昵称
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.nickname.blank? ? '未设置': @customer.nickname  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            姓名
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.realname.blank? ? '未设置': @customer.realname  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            手机
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.mobile.blank? ? '未设置': @customer.mobile  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            住址
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.address.blank? ? '未设置': @customer.address  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            微信ID
+          </div>
+          <div class="col-sm-9">
+            <%= @customer.wx_id.blank? ? '未绑定': @customer.wx_id  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

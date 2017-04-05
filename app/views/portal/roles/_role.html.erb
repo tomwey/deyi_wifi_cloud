@@ -1,0 +1,9 @@
+<tr>
+  <td><%= role.name %></td>
+  <td><%= role.permissions.map(&:permission_name).join(',') %></td>
+  <td><%= l role.created_at, format: :long %></td>
+  <td>
+    <%= link_to '编辑', edit_portal_role_path(role), class: 'btn btn-sm btn-default' %>
+    <%= link_to '删除', portal_role_path(role), method: :delete,  data: { confirm: '您确定吗？' },class: 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

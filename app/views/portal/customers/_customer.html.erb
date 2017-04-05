@@ -1,0 +1,16 @@
+<tr>
+  <td><%= member_avatar_tag(customer, :normal) %></td>
+  <td><%= customer.o_id %></td>
+  <td><%= customer.nickname %></td>
+  <td><%= customer.realname %></td>
+  <td><%= customer.mobile %></td>
+  <td><span class="label label-<%= customer.wx_id.blank? ? 'default' : 'success' %>">
+    <%= customer.wx_id.blank? ? '未绑定' : '已绑定' %>
+  </span></td>
+  <td><%= l customer.created_at, format: :long %></td>
+  <td>
+    <%= link_to '详情', portal_customer_path(customer.o_id), class: 'btn btn-sm btn-default' if policy(Customer).read? %>
+    <%= link_to '编辑', edit_portal_customer_path(customer.o_id), class: 'btn btn-sm btn-primary' if policy(Customer).update? %>
+    <%= link_to '删除', portal_customer_path(customer.o_id), method: :delete,  data: { confirm: '您确定吗？' },class: 'btn btn-sm btn-danger' if policy(Customer).destroy? %>
+  </td>
+</tr>
