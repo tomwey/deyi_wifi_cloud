@@ -25,7 +25,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="/" class="site_title"><i class="fa fa-camera-retro"></i> <span>得益WIFI</span></a>
+            <a href="<%= portal_root_path %>" class="site_title"><%= image_tag 'favicon.ico', class: 'img-circle' %></i> <span>得益WIFI</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -53,8 +53,8 @@
                 </li>
                 <li><a><i class="fa fa-table"></i> 门店管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="tables.html">Tables</a></li>
-                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    <li><a href="<%= new_portal_merchant_path %>">新建门店</a></li>
+                    <li><a href="<%= portal_merchants_path %>">门店列表</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-table"></i> 设备管理 <span class="fa fa-chevron-down"></span></a>

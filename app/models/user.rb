@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          
   mount_uploader :avatar, AvatarUploader
   
+  has_many :merchants, foreign_key: :owner_id, dependent: :destroy
+  
   attr_accessor :code
   
   validates :mobile, presence: true

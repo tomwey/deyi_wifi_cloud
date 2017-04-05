@@ -1,0 +1,10 @@
+<tr>
+  <td><%= merchant.name %></td>
+  <td><%= merchant.address %></td>
+  <td><%= merchant.mobile.blank? ? '-' : merchant.mobile %></td>
+  <td><%= merchant.memo %></td>
+  <td>
+    <%= link_to '编辑', edit_portal_merchant_path(merchant.merch_id), class: 'btn btn-sm btn-default' %>
+    <%= link_to '删除', portal_merchant_path(merchant.merch_id), method: :delete,  data: { confirm: '您确定吗？' },class: 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

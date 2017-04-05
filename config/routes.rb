@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # 商家后台
   namespace :portal, path: '' do
     root 'home#index'
+    resources :merchants
   end
   
   mount RedactorRails::Engine => '/redactor_rails'
