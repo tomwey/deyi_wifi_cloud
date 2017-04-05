@@ -1,6 +1,6 @@
 module ApplicationHelper
   def render_page_title
-    site_name = "云影"
+    site_name = "得益无线"
     title = @page_title ? "#{site_name} - #{@page_title}" : site_name rescue "SITE_NAME"
     content_tag("title", title, nil, false)
   end
