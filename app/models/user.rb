@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :mobile, presence: true
   validates :mobile, format: { with: /\A1[3|4|5|8|7][0-9]\d{8}\z/, message: "请输入11位正确手机号" }, length: { is: 11 },:uniqueness => true
   
-  before_create generate_uid_and_private_token
+  before_create :generate_uid_and_private_token
   def generate_uid_and_private_token
     begin
       n = rand(10)
