@@ -9,7 +9,7 @@
   <!-- non responsive -->
   <%= stylesheet_link_tag  'portal', 'data-turbolinks-track' => true %>
   
-  <link rel="shortcut icon" href="<%= asset_path("favicon.png") %>" />
+  <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>" />
   
   <%= yield :styles %>
   
@@ -25,7 +25,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="/" class="site_title"><i class="fa fa-camera-retro"></i> <span>得益无线平台</span></a>
+            <a href="/" class="site_title"><i class="fa fa-camera-retro"></i> <span>得益WIFI</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -49,46 +49,30 @@
             <div class="menu_section">
               <h3>功能</h3>
               <ul class="nav side-menu">
-                <li><a href="<%= portal_root_path %>"><i class="fa fa-home"></i> 概述 <span class="fa fa-chevron-right"></span></a>
+                <li><a href="<%= portal_root_path %>"><i class="fa fa-home"></i> 控制面板 <span class="fa fa-chevron-right"></span></a>
                 </li>
-                <li><a><i class="fa fa-table"></i> 订单管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> 门店管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="tables.html">Tables</a></li>
                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-table"></i> 订单管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> 设备管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="tables.html">Tables</a></li>
                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-clone"></i> 企业信息 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-clone"></i> 页面管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                     <li><a href="fixed_footer.html">Fixed Footer</a></li>
                   </ul>
                 </li>
-              </ul>
-            </div>
-            <div class="menu_section">
-              <h3>用户中心</h3>
-              <ul class="nav side-menu">
-                <li><a><i class="fa fa-sitemap"></i> 消息 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-clone"></i> 认证管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                      <li><a href="#level1_1">Level One</a>
-                      <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li class="sub_menu"><a href="level2.html">Level Two</a>
-                          </li>
-                          <li><a href="#level2_1">Level Two</a>
-                          </li>
-                          <li><a href="#level2_2">Level Two</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="#level1_2">Level One</a>
-                      </li>
+                    <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                    <li><a href="fixed_footer.html">Fixed Footer</a></li>
                   </ul>
                 </li>
               </ul>
