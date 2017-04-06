@@ -1,0 +1,41 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3>认证配置</h3>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="x_panel">
+  <div class="x_content">
+    <br />
+    
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    
+        <%= simple_form_for([:portal, @config], html: { class: 'form-horizontal form-label-left', id: 'auth_config_form' },
+          wrapper: :horizontal_form,
+          wrapper_mappings: {
+            check_boxes: :horizontal_radio_and_checkboxes,
+            radio_buttons: :horizontal_radio_and_checkboxes,
+            file: :horizontal_file_input,
+            boolean: :horizontal_boolean
+          }) do |f| %>
+            <%= f.input :wifi_length, as: :select, collection: WifiAuthConfig.wifi_lengths, hint: '连网时间超出认证有效期后需再次认证才能上网' %>
+            <%= f.input :auto_jump, as: :boolean, hint: '微信认证自动跳转到微信，一键认证自动完成认证' %>
+            <%= f.input :countdown, hint: '倒计时（0-99秒）到期才能点击认证按钮' %>
+            <%= f.input :auth_click_button, hint: '倒计时结束后页面显示的提示消息，1~8字' %>
+            <%= f.input :https_auth_support, as: :boolean, hint: '访问https网站（如百度、淘宝）也能唤起认证页面，但页面会出现错误证书提示需要用户确认' %>
+            <%= f.input :allow_websites, as: :text, placeholder: '如果有多个站点，直接换行输入。' %>
+            <%= f.input :allow_macs, as: :text, placeholder: '如果有多个设备Mac，直接换行输入。' %>
+            <%= f.input :not_allow_macs, as: :text, placeholder: '如果有多个设备Mac，直接换行输入。' %>
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-3">
+                <button type="submit" class="btn btn-primary">保存</button>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

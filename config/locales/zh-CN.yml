@@ -26,6 +26,7 @@
       common_config: '公共配置'
       merchant: '商铺'
       access_point: '热点设备'
+      wifi_auth_config: '认证配置'
     attributes:
       user:
         mobile: "手机"
@@ -50,6 +51,16 @@
         gw_address: '网关IP'
         gw_port: '网关端口'
         merchant_id: '所属门店'
+      wifi_auth_config:
+        auth_type: '认证方式'
+        wifi_length: 认证有效期
+        auto_jump: '认证页自动跳转'
+        countdown: '倒计时'
+        auth_click_button: '结束提示消息'
+        https_auth_support: 'https唤起认证页'
+        allow_websites: '允许直接访问的域名'
+        allow_macs: '无需认证的设备'
+        not_allow_macs: '禁止上网的设备'
       member:
         mobile: "手机号"
         password: '密码'

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   has_many :merchants, foreign_key: :owner_id, dependent: :destroy
+  has_one  :auth_config, class_name: 'WifiAuthConfig'
   
   attr_accessor :code
   

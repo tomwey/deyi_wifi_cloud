@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     root 'home#index'
     resources :merchants,     path: 'shop'
     resources :access_points, path: 'ap'
+    resources :wifi_auth_configs, path: 'auth_config', only: [:update]
+    get 'auth_config/manage' => 'wifi_auth_configs#edit', as: :manage_auth_config
   end
   
   mount RedactorRails::Engine => '/redactor_rails'
