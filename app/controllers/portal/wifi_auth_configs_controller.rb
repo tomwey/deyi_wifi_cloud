@@ -2,7 +2,10 @@ class Portal::WifiAuthConfigsController < Portal::ApplicationController
   
   def edit
     @page_header = '认证配置'
-    @config = current_user.auth_config || current_user.auth_config.create
+    @config = current_user.auth_config
+    if @config.blank?
+      @config = WifiAuthConfig.create!(user_id: current_user.id)
+    end
   end
   
   def update
