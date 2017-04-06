@@ -1,0 +1,12 @@
+<tr>
+  <td><%= access_point.ap_id %></td>
+  <td><%= access_point.merchant.try(:name) %></td>
+  <td><%= access_point.ssid %></td>
+  <td><%= access_point.gw_mac %></td>
+  <td><%= access_point.gw_address %></td>
+  <td><%= access_point.gw_port %></td>
+  <td>
+    <%= link_to '编辑', edit_portal_access_point_path(access_point.ap_id), class: 'btn btn-sm btn-default' %>
+    <%= link_to '删除', portal_access_point_path(access_point.ap_id), method: :delete,  data: { confirm: '您确定吗？' },class: 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

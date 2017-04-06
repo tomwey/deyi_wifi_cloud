@@ -1,0 +1,28 @@
+<div class="row well">
+  <div class="col-md-4">产品图片</div>
+  <div class="col-md-8"><%= image_tag @product.image.url(:thumb) %></div>
+  
+  <div class="col-md-4">产品ID</div>
+  <div class="col-md-8"><%= @product.pid %></div>
+  
+  <div class="col-md-4">产品名称</div>
+  <div class="col-md-8"><%= @product.name %></div>
+  
+  <div class="col-md-4">产品简介</div>
+  <div class="col-md-8"><%= @product.intro %></div>
+  
+  <div class="col-md-4">产品详情</div>
+  <div class="col-md-8"><%= @product.body %></div>
+  
+  <div class="col-md-4">产品原价</div>
+  <div class="col-md-8"><%= @product.market_price %></div>
+  
+  <div class="col-md-4">产品折扣价</div>
+  <div class="col-md-8"><%= @product.discount_price %></div>
+  
+  <div class="col-md-4">产品库存</div>
+  <div class="col-md-8"><%= @product.stock %></div>
+  
+  <div class="col-md-4">创建日期</div>
+  <div class="col-md-8"><%= @product.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
+</div>

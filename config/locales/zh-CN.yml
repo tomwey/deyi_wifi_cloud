@@ -25,6 +25,7 @@
       page: '文档'
       common_config: '公共配置'
       merchant: '商铺'
+      access_point: '热点设备'
     attributes:
       user:
         mobile: "手机"
@@ -43,6 +44,12 @@
         mobile: '联系电话'
         memo: '备注'
         user_id: '所有者'
+      access_point:
+        ssid: 'SSID'
+        gw_mac: '网关Mac地址'
+        gw_address: '网关IP'
+        gw_port: '网关端口'
+        merchant_id: '所属门店'
       member:
         mobile: "手机号"
         password: '密码'

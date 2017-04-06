@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   # 商家后台
   namespace :portal, path: '' do
     root 'home#index'
-    resources :merchants
+    resources :merchants,     path: 'shop'
+    resources :access_points, path: 'ap'
   end
   
   mount RedactorRails::Engine => '/redactor_rails'

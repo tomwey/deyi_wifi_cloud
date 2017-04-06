@@ -1,0 +1,51 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3>设备列表</h3>
+  </div>
+
+  <div class="title_right">
+    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="输入设备ssid名称">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<% if @access_points.empty? %>
+<div class="x_panel">
+  <div class="x_content">
+    <div class="no-results"><无数据显示><br /><br /><%= link_to '新建设备', @action, class: 'btn btn-primary' %></div>
+  </div>
+</div>
+<% else %>            
+<div class="x_panel">
+  <div class="x_content">
+    <div class="content-list">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>设备ID</th>
+            <th>所属门店</th>
+            <th>SSID</th>
+            <th>设备Mac地址</th>
+            <th>设备IP</th>
+            <th>设备端口</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @access_points %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="text-align: center;"><%= will_paginate @access_points, renderer: BootstrapPagination::Rails %></div>
+</div>
+
+<% end %>

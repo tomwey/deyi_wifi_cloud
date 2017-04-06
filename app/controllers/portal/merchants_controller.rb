@@ -30,6 +30,12 @@ class Portal::MerchantsController < Portal::ApplicationController
   
   def edit
     @page_header = "更新门店"
+    @merchant = current_user.merchants.find_by(merch_id: params[:id])
+    if @merchant.blank?
+      flash[:error] = '门店不存在'
+      rediret_to portal_merchants_url
+      return
+    end
   end
   
   def update
@@ -43,7 +49,13 @@ class Portal::MerchantsController < Portal::ApplicationController
   end
   
   def destroy
-    @merchant = current_user.merchants.find_by(params[:id])
+    @merchant = current_user.merchants.find_by(merch_id: params[:id])
+    
+    if @merchant.blank?
+      flash[:error] = '门店不存在'
+      rediret_to portal_merchants_url
+      return
+    end
     @merchant.destroy
     flash[:success] = '删除成功'
     redirect_to portal_merchants_url
