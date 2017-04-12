@@ -29,7 +29,7 @@ ActiveAdmin.setup do |config|
   # instead of a string (overrides :site_title)
   
   # 自定义页脚
-  config.view_factory.footer = MyFooter
+  # config.view_factory.footer = MyFooter
   
   #
   # Note: Aim for an image that's 21px high so it fits in the header.

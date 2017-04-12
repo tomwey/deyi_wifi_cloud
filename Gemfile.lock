@@ -2,7 +2,7 @@ GIT
   remote: git://github.com/activeadmin/activeadmin.git
   revision: 7c664ec30e30fac6c5c9cce6c60367d1e3f9d3d9
   specs:
-    activeadmin (1.0.0.pre4)
+    activeadmin (1.0.0.pre5)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails

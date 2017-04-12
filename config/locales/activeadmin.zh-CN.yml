@@ -1,6 +1,6 @@
 "zh-CN":
   active_admin:
-    # powered_by: "Copyright 2016 农家"
+    powered_by: "Copyright @ 得益无线"
     batch_actions:
       labels:
         block: "禁用"
