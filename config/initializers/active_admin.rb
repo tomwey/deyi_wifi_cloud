@@ -1,7 +1,7 @@
 class MyFooter < ActiveAdmin::Component
   def build
     super(id: "footer")
-    para "版权所有 #{Date.today.year} 云影"
+    para "版权所有 #{Date.today.year} 得益WIFI"
   end
 end
 
@@ -11,7 +11,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "云影后台"
+  config.site_title = "得益无线后台"
   
   config.namespace :cpanel do |admin|
     admin.build_menu do |menu|
